@@ -8,3 +8,4 @@ var bg_color;
 var spaceship;
 var fire_interval = 6;
 var beam_velocity = 15;
+var starspeed = 0.8;

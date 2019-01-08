@@ -1,7 +1,6 @@
 // Stars will be 5 pixels wide.
 
 function Star(layer) {
-  this.starspeed = 1.5;
   this.layer = layer;
   this.color = color('rgba(255, 255, 255, 0.6)');
   this.choice_arrays = [
@@ -35,7 +34,7 @@ function Star(layer) {
   }.bind(this);
 
   this.update = function() {
-    this.random_y += (layer + 1) * this.starspeed;
+    this.random_y += (layer * layer / 2) + 1 * starspeed;
   }
 
   this.design_0 = function() {
