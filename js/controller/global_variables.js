@@ -1,0 +1,10 @@
+var ship;
+var canvas;
+var cDim = [400, 600];
+var ship_speed = 6;
+var bg_stars =[];
+var num_bg_stars = 120;
+var bg_color;
+var spaceship;
+var fire_interval = 6;
+var beam_velocity = 15;
