@@ -37,7 +37,7 @@ function Ship(x, y) {
       push();
         stroke(ship_cockpit_blue_6);
         this.cockpit_center();
-      pop
+      pop()
       push();
         stroke('#ffffff');
         this.right_wing();
