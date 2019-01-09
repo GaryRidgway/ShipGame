@@ -40,8 +40,8 @@ function Fire_controls(fire_key) {
 
   this.fire_beam = function() {
     if(this.since_last_fire == 0) {
-      this.beams.push(new Beam(this.ship_data.x + this.beam_inset, this.ship_data.y, beam_velocity, this.beam_width));
-      this.beams.push(new Beam(this.ship_data.x + this.ship_data.width - this.beam_width - this.beam_inset, this.ship_data.y, beam_velocity, this.beam_width));
+      this.beams.push(new Beam(this.ship_data.x + this.beam_inset, this.ship_data.y + this.ship_data.height / 2, beam_velocity, this.beam_width));
+      this.beams.push(new Beam(this.ship_data.x + this.ship_data.width - this.beam_width - this.beam_inset, this.ship_data.y + this.ship_data.height / 2, beam_velocity, this.beam_width));
       this.since_last_fire = fire_interval;
     } else {
       this.since_last_fire --;

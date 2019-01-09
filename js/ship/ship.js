@@ -1,25 +1,13 @@
-function ship_preload() {
-  spaceship = loadImage('Assets/spaceship_red.png')
-}
-
 function Ship(x, y) {
-  this.width = 47;
-  this.height = 29;
+  this.width = ship_dims.x;
+  this.height = ship_dims.y;
   this.x = x || width/2 - this.width/2;
   this.y = y || height - 10 - this.height;
   this.fire_controls = new Fire_controls(75);
 
   this.gameloop = function() {
     this.update();
-    this.display_big();
-  }
-
-  this.display = function() {
-    push();
-      stroke('#434343');
-      noFill();
-      image(spaceship, this.x, this.y);
-    pop();
+    this.display();
   }
 
   this.update = function() {
@@ -32,9 +20,9 @@ function Ship(x, y) {
     this.y = wasd_y;
   }
 
-  this.display_big = function() {
+  this.display = function() {
     push();
-    translate(ship_translate.x, ship_translate.y)
+    translate(this.x + this.width / 2, this.y);
       noStroke();
       push();
         stroke(ship_cockpit_blue_6);
@@ -42,13 +30,17 @@ function Ship(x, y) {
         this.body_detail();
       pop();
       push();
-        stroke(255);
+        stroke('#ffffff');
         this.base_cockpit();
         this.cockpit_details();
       pop();
       push();
         stroke(ship_cockpit_blue_6);
         this.cockpit_center();
+      pop
+      push();
+        stroke('#ffffff');
+        this.right_wing();
       pop();
     pop();
   }
@@ -172,6 +164,49 @@ function Ship(x, y) {
         vertex(cov[5][0] * ship_size, cov[5][1] * ship_size);
         vertex(civ[5][0] * ship_size, civ[5][1] * ship_size);
         vertex(civ[4][0] * ship_size, civ[4][1] * ship_size);
+      endShape(CLOSE);
+    pop();
+  }
+
+  // Right Wing
+  this.right_wing = function() {
+    push();
+      fill(ship_wing_grey_1);
+      beginShape();
+        vertex(wv[0][0] * ship_size, wv[0][1] * ship_size);
+        vertex(wv[1][0] * ship_size, wv[1][1] * ship_size);
+        vertex(wv[2][0] * ship_size, wv[2][1] * ship_size);
+        vertex(wv[3][0] * ship_size, wv[3][1] * ship_size);
+        vertex(wv[4][0] * ship_size, wv[4][1] * ship_size);
+      endShape(CLOSE);
+      beginShape();
+        vertex(wv[0][0] * ship_size * -1 - 1, wv[0][1] * ship_size);
+        vertex(wv[1][0] * ship_size * -1 - 1, wv[1][1] * ship_size);
+        vertex(wv[2][0] * ship_size * -1 - 1, wv[2][1] * ship_size);
+        vertex(wv[3][0] * ship_size * -1 - 1, wv[3][1] * ship_size);
+        vertex(wv[4][0] * ship_size * -1 - 1, wv[4][1] * ship_size);
+      endShape(CLOSE);
+      fill(ship_wing_grey_2);
+      beginShape();
+        vertex(wv[0][0] * ship_size, wv[0][1] * ship_size);
+        vertex(wv[3][0] * ship_size, wv[3][1] * ship_size);
+        vertex(wv[4][0] * ship_size, wv[4][1] * ship_size);
+      endShape(CLOSE);
+      beginShape();
+        vertex(wv[0][0] * ship_size * -1 - 1, wv[0][1] * ship_size);
+        vertex(wv[3][0] * ship_size * -1 - 1, wv[3][1] * ship_size);
+        vertex(wv[4][0] * ship_size * -1 - 1, wv[4][1] * ship_size);
+      endShape(CLOSE);
+      fill(ship_wing_grey_3);
+      beginShape();
+        vertex(wv[0][0] * ship_size, wv[0][1] * ship_size);
+        vertex(wv[1][0] * ship_size, wv[1][1] * ship_size);
+        vertex(wv[2][0] * ship_size, wv[2][1] * ship_size);
+      endShape(CLOSE);
+      beginShape();
+        vertex(wv[0][0] * ship_size * -1 - 1, wv[0][1] * ship_size);
+        vertex(wv[1][0] * ship_size * -1 - 1, wv[1][1] * ship_size);
+        vertex(wv[2][0] * ship_size * -1 - 1, wv[2][1] * ship_size);
       endShape(CLOSE);
     pop();
   }

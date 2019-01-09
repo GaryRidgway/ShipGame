@@ -1,21 +1,32 @@
+// The ship the player controls.
 var ship;
+// The canvas the game is drawn on.
 var canvas;
+// The set dimensions of the Canvas.
 var cDim = [400, 600];
-var ship_speed = 6;
+// The speed the ship is allowed to move about the canvas.
+var ship_speed = 7;
+// The Array of stars in the background.
 var bg_stars =[];
+// The amount of stars to put in the background.
 var num_bg_stars = 120;
+// The default background color
 var bg_color;
-var spaceship;
+// The image for the spaceship if an image is loaded.
 var fire_interval = 6;
+// The speed that a fired beam travels at.
 var beam_velocity = 15;
+// The speed of the stars int he back. speeds up depending on the layer.
+// Check the background file for more understanding.
 var starspeed = 0.8;
 
 
 // Ship display variables.
 
-// Ship size.
-var ship_size = 4;
-var ship_translate = {x: 50, y: 10};
+// Ship size. Change this to make the ship larger or smaller.
+var ship_size = 1;
+// Ship dimensions.
+var ship_dims = {x: 82 * ship_size, y: 52 * ship_size};
 var ship_cockpit_grey_1 = '#ebf6fa';
 var ship_cockpit_grey_2 = '#dbe4e9';
 
@@ -25,6 +36,10 @@ var ship_cockpit_blue_3 = '#4a8ee7';
 var ship_cockpit_blue_4 = '#599af0';
 var ship_cockpit_blue_5 = '#79b3ff';
 var ship_cockpit_blue_6 = '#91c0ff';
+
+var ship_wing_grey_1 = '#eeeeee';
+var ship_wing_grey_2 = '#dfdfdf';
+var ship_wing_grey_3 = '#d3d3d3';
 
 
 // Body vertices.
@@ -61,5 +76,14 @@ var civ = [
   [-2, 36],
   [-5, 35],
   [-5, 29]
+];
+
+// Wing vertices
+var wv = [
+  [10,33],
+  [40,43],
+  [40,47],
+  [14,47],
+  [10,52]
 ];
 
