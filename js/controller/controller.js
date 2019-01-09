@@ -1,6 +1,6 @@
 // we are using a base with of screen at 2000.
 function preload() {
-  environment_preload();
+  // environment_preload();
   bg_color = color('#242424');
   ship_preload();
 
@@ -19,7 +19,7 @@ function setup() {
 
 function draw() {
   canvas.background(bg_color);
-  environment_gameloop();
+  // environment_gameloop();
   ship.gameloop();
   debug_gameloop()
 }
