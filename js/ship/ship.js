@@ -171,42 +171,54 @@ function Ship(x, y) {
   // Right Wing
   this.right_wing = function() {
     push();
-      fill(ship_wing_grey_1);
+      fill('#ec5657');
       beginShape();
         vertex(wv[0][0] * ship_size, wv[0][1] * ship_size);
         vertex(wv[1][0] * ship_size, wv[1][1] * ship_size);
         vertex(wv[2][0] * ship_size, wv[2][1] * ship_size);
         vertex(wv[3][0] * ship_size, wv[3][1] * ship_size);
-        vertex(wv[4][0] * ship_size, wv[4][1] * ship_size);
       endShape(CLOSE);
       beginShape();
-        vertex(wv[0][0] * ship_size * -1 - 1, wv[0][1] * ship_size);
-        vertex(wv[1][0] * ship_size * -1 - 1, wv[1][1] * ship_size);
-        vertex(wv[2][0] * ship_size * -1 - 1, wv[2][1] * ship_size);
-        vertex(wv[3][0] * ship_size * -1 - 1, wv[3][1] * ship_size);
-        vertex(wv[4][0] * ship_size * -1 - 1, wv[4][1] * ship_size);
+        vertex((wv[0][0] * -1 - 1) * ship_size, wv[0][1] * ship_size);
+        vertex((wv[1][0] * -1 - 1) * ship_size, wv[1][1] * ship_size);
+        vertex((wv[2][0] * -1 - 1) * ship_size, wv[2][1] * ship_size);
+        vertex((wv[3][0] * -1 - 1) * ship_size, wv[3][1] * ship_size);
       endShape(CLOSE);
-      fill(ship_wing_grey_2);
-      beginShape();
-        vertex(wv[0][0] * ship_size, wv[0][1] * ship_size);
-        vertex(wv[3][0] * ship_size, wv[3][1] * ship_size);
-        vertex(wv[4][0] * ship_size, wv[4][1] * ship_size);
-      endShape(CLOSE);
-      beginShape();
-        vertex(wv[0][0] * ship_size * -1 - 1, wv[0][1] * ship_size);
-        vertex(wv[3][0] * ship_size * -1 - 1, wv[3][1] * ship_size);
-        vertex(wv[4][0] * ship_size * -1 - 1, wv[4][1] * ship_size);
-      endShape(CLOSE);
-      fill(ship_wing_grey_3);
+      fill('#ec5657');
+
       beginShape();
         vertex(wv[0][0] * ship_size, wv[0][1] * ship_size);
         vertex(wv[1][0] * ship_size, wv[1][1] * ship_size);
+        vertex(wv[4][0] * ship_size, wv[4][1] * ship_size);
+      endShape(CLOSE);
+      beginShape();
+        vertex((wv[0][0] * -1 - 1) * ship_size, wv[0][1] * ship_size);
+        vertex((wv[1][0] * -1 - 1) * ship_size, wv[1][1] * ship_size);
+        vertex((wv[4][0] * -1 - 1) * ship_size, wv[4][1] * ship_size);
+      endShape(CLOSE);
+
+      fill('#ffce00');
+      beginShape();
+        vertex(wv[0][0] * ship_size, wv[0][1] * ship_size);
+        vertex(wv[4][0] * ship_size, wv[4][1] * ship_size);
         vertex(wv[2][0] * ship_size, wv[2][1] * ship_size);
       endShape(CLOSE);
       beginShape();
-        vertex(wv[0][0] * ship_size * -1 - 1, wv[0][1] * ship_size);
-        vertex(wv[1][0] * ship_size * -1 - 1, wv[1][1] * ship_size);
-        vertex(wv[2][0] * ship_size * -1 - 1, wv[2][1] * ship_size);
+        vertex((wv[0][0] * -1 - 1) * ship_size, wv[0][1] * ship_size);
+        vertex((wv[4][0] * -1 - 1) * ship_size, wv[4][1] * ship_size);
+        vertex((wv[2][0] * -1 - 1) * ship_size, wv[2][1] * ship_size);
+      endShape(CLOSE);
+
+      fill('#239b56');
+      beginShape();
+        vertex(wv[1][0] * ship_size, wv[1][1] * ship_size);
+        vertex(wv[4][0] * ship_size, wv[4][1] * ship_size);
+        vertex(wv[2][0] * ship_size, wv[2][1] * ship_size);
+      endShape(CLOSE);
+      beginShape();
+        vertex((wv[1][0] * -1 - 1) * ship_size, wv[1][1] * ship_size);
+        vertex((wv[4][0] * -1 - 1) * ship_size, wv[4][1] * ship_size);
+        vertex((wv[2][0] * -1 - 1) * ship_size, wv[2][1] * ship_size);
       endShape(CLOSE);
     pop();
   }

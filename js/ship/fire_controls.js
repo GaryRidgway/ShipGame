@@ -30,7 +30,7 @@ function Fire_controls(fire_key) {
     if (this.fire){
       this.fire_beam();
     }
-    for (beam in this.beams) {
+    for (beam in this.beams.reverse()) {
       this.beams[beam].gameloop();
       if(this.beams[beam].y < -this.beams[beam].height) {
         this.beams.splice(beam, 1);
