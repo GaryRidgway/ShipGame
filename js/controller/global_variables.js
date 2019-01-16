@@ -1,5 +1,11 @@
+var user_local_settings;
+try {
+  user_local_settings = JSON.parse(localStorage.getItem('user_local_settings'));
+} finally {}
+
 // The ship the player controls.
 var ship;
+var ship_img;
 // The canvas the game is drawn on.
 var canvas;
 // The set dimensions of the Canvas.
@@ -20,6 +26,11 @@ var beam_velocity = 15;
 // Check the background file for more understanding.
 var starspeed = 0.8;
 
+// Debug Variables
+var debug = false;
+var tA;
+var tC = 0;
+
 
 // Ship display variables.
 
@@ -33,7 +44,7 @@ var ship_cockpit_grey_2 = '#dbe4e9';
 var ship_cockpit_blue_1 = '#1968d1';
 var ship_cockpit_blue_2 = '#488eeb';
 var ship_cockpit_blue_3 = '#4a8ee7';
-var ship_cockpit_blue_4 = '#599af0';
+var ship_cockpit_blue_4 = user_local_settings.mycolor || '#599af0';
 var ship_cockpit_blue_5 = '#79b3ff';
 var ship_cockpit_blue_6 = '#91c0ff';
 

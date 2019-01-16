@@ -4,9 +4,11 @@ function Ship(x, y) {
   this.x = x || width/2 - this.width/2;
   this.y = y || height - 10 - this.height;
   this.fire_controls = new Fire_controls(75);
+  this.ship_trail = new Ship_Trail(this.x, this.y, -0.5, 7);
 
   this.gameloop = function() {
     this.update();
+    this.ship_trail.gameloop(this.x, this.y, 0, 0);
     this.display();
   }
 
@@ -20,7 +22,40 @@ function Ship(x, y) {
     this.y = wasd_y;
   }
 
+  this.display2 = function() {
+    // ----------------
+    if (debug) {
+      var t0 = performance.now();
+    }
+    // ----------------
+    push();
+      translate(this.x + this.width / 2, this.y);
+      image(ship_img, 0, 0);
+    pop();
+
+    // ----------------
+    if (debug) {
+      var t1 = performance.now();
+      if (tA === undefined) {
+        tA = (t1 - t0);
+        tC++;
+      } else {
+        tA = ((tA * tC) + (t1 - t0));
+        tC++;
+        tA = tA / tC;
+      }
+      console.log("iteration " + tC + " took " + tA + " milliseconds.")
+    }
+    // ----------------
+  }
+
   this.display = function() {
+    // ----------------
+    if (debug) {
+      var t0 = performance.now();
+    }
+    // ----------------
+
     push();
     translate(this.x + this.width / 2, this.y);
       noStroke();
@@ -43,6 +78,21 @@ function Ship(x, y) {
         this.right_wing();
       pop();
     pop();
+
+    // ----------------
+    if (debug) {
+      var t1 = performance.now();
+      if (tA === undefined) {
+        tA = (t1 - t0);
+        tC++;
+      } else {
+        tA = ((tA * tC) + (t1 - t0));
+        tC++;
+        tA = tA / tC;
+      }
+      console.log("iteration " + tC + " took " + tA + " milliseconds.")
+    }
+    // ----------------
   }
 
   // Basic Body

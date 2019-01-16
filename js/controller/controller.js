@@ -2,6 +2,7 @@
 function preload() {
   environment_preload();
   bg_color = color('#242424');
+  ship_img = loadImage('Assets/spaceship_red.png');
 }
 
 function setup() {
@@ -13,11 +14,13 @@ function setup() {
   // Move the canvas so it’s inside our <div id="sketch-holder">.
   canvas.parent('sketch-holder');
   canvas.background(bg_color);
+
+
 }
 
 function draw() {
   canvas.background(bg_color);
   environment_gameloop();
   ship.gameloop();
-  debug_gameloop()
+  debug_gameloop();
 }
