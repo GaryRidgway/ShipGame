@@ -44,7 +44,7 @@ var ship_cockpit_grey_2 = '#dbe4e9';
 var ship_cockpit_blue_1 = '#1968d1';
 var ship_cockpit_blue_2 = '#488eeb';
 var ship_cockpit_blue_3 = '#4a8ee7';
-var ship_cockpit_blue_4 = user_local_settings.mycolor || '#599af0';
+var ship_cockpit_blue_4 = '#599af0';
 var ship_cockpit_blue_5 = '#79b3ff';
 var ship_cockpit_blue_6 = '#91c0ff';
 
