@@ -1,7 +1,7 @@
 // we are using a base with of screen at 2000.
 function preload() {
   environment_preload();
-  bg_color = color('#242424');
+  bg_color = color('#0f1721');
   ship_img = loadImage('Assets/spaceship_red.png');
 }
 
