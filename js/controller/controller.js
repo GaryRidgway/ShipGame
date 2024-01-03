@@ -22,5 +22,5 @@ function draw() {
   canvas.background(bg_color);
   environment_gameloop();
   ship.gameloop();
-  debug_gameloop();
+  // debug_gameloop();
 }
